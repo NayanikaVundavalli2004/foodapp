@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/NayanikaVundavalli2004/foodapp.git'
+                git branch: 'main', url: 'https://github.com/NayanikaVundavalli2004/foodapp.git'
             }
         }
 
@@ -35,3 +35,4 @@ pipeline {
         }
     }
 }
+
