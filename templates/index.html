@@ -1,0 +1,21 @@
+<html>
+<head>
+  <title>Food Ordering App</title>
+</head>
+<body style="text-align:center;">
+  <h1>🍴 Welcome to FoodApp 🍔</h1>
+  <form method="POST" action="/order">
+    <label for="item">Select Food Item:</label>
+    <select name="item">
+      {% for item, price in menu.items() %}
+        <option value="{{ item }}">{{ item }} - ₹{{ price }}</option>
+      {% endfor %}
+    </select>
+    <br><br>
+    <label>Quantity:</label>
+    <input type="number" name="quantity" min="1" required>
+    <br><br>
+    <button type="submit">Place Order</button>
+  </form>
+</body>
+</html>
