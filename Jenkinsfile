@@ -19,7 +19,7 @@ pipeline {
         stage('Push to Docker Hub') {
             steps {
                 script {
-                    sh '''
+                    bat '''
                     docker login -u nayanika3664 -p Niharika@2010
                     docker push nayanika3664/foodapp:latest
                     '''
@@ -29,8 +29,8 @@ pipeline {
 
         stage('Deploy to Kubernetes') {
             steps {
-                sh 'kubectl apply -f deployment.yaml --validate=false'
-                sh 'kubectl apply -f service.yaml --validate=false'
+                bat 'kubectl apply -f deployment.yaml --validate=false'
+                bat 'kubectl apply -f service.yaml --validate=false'
             }
         }
     }
